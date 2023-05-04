@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil&display=swap" rel="stylesheet">
+	<title>Temperature Converter</title>
+	<style type="text/css">
+				body {
+			background-image: url('Power.png');
+			color: #FFFFFF;
+			font-family: 'Stardos Stencil', cursive;
+			text-align: center;
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 50px;
+			background-image: url('Stars.jpg');
+			background-color: #0C0C0C;
+			box-shadow: 0 0 20px #000000;
+			border-radius: 10px;
+			background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+		}
+		h1 {
+			text-align: center;
+			margin-bottom: 20px;
+			font-size: 40px;
+			font-family: 'Stardos Stencil', cursive;;
+		}
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			padding: 10px;
+			text-align: center;
+		}
+		th {
+			background-color:  #9370DB;
+			color: #FFFFFF;
+		}
+		tr {
+			background-color: #8B00FF;
+		}
+		form {
+		margin: 20px auto;
+		max-width: 500px;
+		width: 80%;
+		background-color: #000000;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0px 0px 20px #FFFFFF;
+	}
+	
+	label {
+		display: block;
+		margin-bottom: 10px;
+		font-weight: bold;
+		
+	}
+	
+	input[type=number] {
+		padding: 10px;
+		border-radius: 5px;
+		border: none;
+		background-color: #9370DB;
+		color: #FFFFFF;
+		width: 100%;
+		box-sizing: border-box;
+		margin-bottom: 20px;
+	}
+	
+	.Celcius {
+		font-size: 24px;
+		font-weight: bold;
+		color: #FFDD00;
+		background-color: #000000;
+	}
+
+
+	</style>
+</head>
+<body>
+<div class="container">
+<h1>Temperature Converter</h1>
+<p style="font-size: 30px;">It's currently:</p>
+	<p id="today" style="font-size:20px;"></p>
+<script type="text/javascript">
+	const date = new Date();
+	document.getElementById("today").innerHTML = date;
+</script>
+<h2>Fahrenheit To Celcius</h2>
+<p>
+  <label>Put A Fahrenheit Value Here To Convert it To Celcius</label>
+  <input id="inputFahrenheit" type="number" oninput="Convert(this.value)" onchange="Convert(this.value)">
+  <button onClick="window.location.reload();">Clear All</button>
+</p>
+<p style="font-size: 20px;">Celcius: <span id="Celcius"></span></p>
+
+<script>
+function Convert(value) {
+  valNum = parseFloat(value);
+  document.getElementById("Celcius").innerHTML=(value-32)* 5/9;
+}
+</script>
+
+<table class="table table-hover">
+	<thead>
+    <tr>
+      <th scope="col">Celsius(°C)</th>
+      <th scope="col">Fahrenheit(℉)</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-273.15</th>
+      <td>-459.67</td>
+      <td>Absolute Zero Temperature</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>32.0</td>
+      <td>Freezing/Melting Point of Water</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>69.8</td>
+      <td>Room Temperature</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>98.6</td>
+      <td>Average Body Temperature</td>
+    </tr>
+     <tr>
+      <td>100</td>
+      <td>212.0</td>
+      <td>Boiling Point of Water</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>
